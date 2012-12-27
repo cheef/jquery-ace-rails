@@ -1,0 +1,8 @@
+[submodule "jquery-ace"]
+	path = jquery-ace
+	url = git@github.com:cheef/jquery-ace.git
+	branch = master
+[submodule "jekyll"]
+	path = jekyll
+	url = git@github.com:cheef/jquery-ace.git
+    branch = gh-pages
