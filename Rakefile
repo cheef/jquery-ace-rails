@@ -1,6 +1,6 @@
 require 'bundler/gem_tasks'
 
-JEKYLL_JAVASCRIPTS_PATH     = File.expand_path 'jekyll/javascripts/jquery-ace', File.dirname(__FILE__)
+JEKYLL_JAVASCRIPTS_PATH     = File.expand_path 'jekyll/javascripts', File.dirname(__FILE__)
 JQUERY_ACE_JAVASCRIPTS_PATH = File.expand_path 'jquery-ace', File.dirname(__FILE__)
 RAILS_JAVASCRIPTS_PATH      = File.expand_path 'vendor/assets/javascripts', File.dirname(__FILE__)
 
@@ -37,7 +37,7 @@ namespace 'jquery-ace-rails' do
   desc %(Copy jquery-ace files from jekyll path to dependent repositories)
   task :sync do
     [ JQUERY_ACE_JAVASCRIPTS_PATH, RAILS_JAVASCRIPTS_PATH ].each do |destination_path|
-      FileUtils.cp_r "#{JEKYLL_JAVASCRIPTS_PATH}/", "#{destination_path}/"
+      FileUtils.cp_r "#{JEKYLL_JAVASCRIPTS_PATH}/.", "#{destination_path}/"
     end
   end
 end
